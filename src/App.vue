@@ -13,10 +13,11 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink class="v-[500px] mb-[8px] flex h-[68px] text-lg text-sky-950 grow items-center justify-center gap-2  bg-sky-200 p-3 text-sm font-medium hover:bg-gray-700 hover:text-amber-100 md:flex-none md:justify-start md:p-2 md:px-3 last:mb-0" 
         to="/"
-        activeClass="bg-slate-900 text-white">Home</RouterLink>
+        activeClass="bg-slate-900 text-white">
+        <img src="./assets/icons/Home.svg" alt="Home logo" width="40px" height="40px"/>Home</RouterLink>
         <RouterLink class=" mb-[8px] flex h-[68px] text-lg text-sky-950 grow items-center justify-center gap-2  bg-sky-200 p-3 text-sm font-medium hover:bg-gray-700 hover:text-amber-100 md:flex-none md:justify-start md:p-2 md:px-3 last:mb-0" 
         to="/Users"
-        activeClass="bg-slate-900 text-white">Users</RouterLink>
+        activeClass="bg-slate-900 text-white"><img src="./assets/icons/Users.svg" alt="Home logo" width="40px" height="40px"/>Users</RouterLink>
       </nav>
     </div>
   </header>
