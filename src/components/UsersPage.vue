@@ -37,6 +37,7 @@ const fetchUsers = async (): Promise<User[]> => {
       return [];
     }
   } catch (error) {
+    alert("Failed to fetch data:"+ error)
     console.error("Failed to fetch data:", error);
     return [];
   }
@@ -78,12 +79,18 @@ const columns: ColumnDef<User, string|number>[] = [
 ];
 
 const loading = ref(true);
+const errorState = ref(false)
 const data = ref<User[]>([]);
 onMounted(async () => {
   try {
     loading.value = true;
     data.value = await fetchUsers();
-  } finally {
+    
+  } 
+  catch(error){
+    errorState.value = true
+  }
+  finally {
     loading.value = false;
   }
 });
@@ -95,9 +102,9 @@ onMounted(async () => {
   <div v-if="loading" :class="['w-4/4', 'h-screen', 'flex', 'justify-center', 'items-center']">
     <p :class="['text-5xl', 'animate-bounce']">Loading Data...</p>
   </div>
+  
   <div v-else class="w-full  min-h-screen bg-sky-100 inline-block">
     <TablePage  :columns :data /> 
   </div>
-  
 
 </template>
